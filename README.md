@@ -12,9 +12,13 @@ An open-source, self-hostable blueprint for source-code quality, security,
 license compliance and pull-request review. Published by **ERNU.EU** as a clean,
 generic reference with no customer, infrastructure or private-repository data.
 
-[Română](README.ro.md) · [Quick start](docs/QUICK-START.md) ·
-[Full guide](docs/IMPLEMENTATION-GUIDE-RO.md) ·
-[Branded PDF](docs/pdf/ERNU_EU_Open_DevSecOps_Ghid_RO.pdf)
+## Choose your language
+
+- **For Romanian → [Documentație completă în română](docs/RO/README.md)**
+- **For English → [Complete documentation in English](docs/EN/README.md)**
+
+Each language directory contains the complete Markdown documentation, a
+branded PDF and an editable Word DOCX edition.
 
 ## Recommended stack
 
@@ -58,9 +62,9 @@ scripts/validate-configs.sh
 cp -a examples/sample-application/devsecops ./devsecops
 ~~~
 
-See [mandatory deployment gates](docs/MANDATORY-DEPLOYMENT-GATE.md).
+See [mandatory deployment gates in English](docs/EN/MANDATORY-DEPLOYMENT-GATE.md)
+or [validarea obligatorie în română](docs/RO/MANDATORY-DEPLOYMENT-GATE.md).
 
 ## License
 
 Apache License 2.0. See [LICENSE](LICENSE).
-
