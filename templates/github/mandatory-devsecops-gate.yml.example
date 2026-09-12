@@ -1,0 +1,27 @@
+name: Mandatory DevSecOps Gate
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+  security-events: write
+jobs:
+  devsecops-gate:
+    name: devsecops-gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+      - name: Trivy gate
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          severity: HIGH,CRITICAL
+          exit-code: '1'
+      - name: Semgrep gate
+        run: docker run --rm -v "$PWD:/src" -w /src semgrep/semgrep:latest semgrep scan --config p/default --error .
+

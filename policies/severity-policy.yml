@@ -1,0 +1,12 @@
+version: 1
+mode: manual-nonblocking
+blocking:
+  sast: [ERROR]
+  vulnerabilities: [CRITICAL, HIGH]
+  secrets: [ANY]
+  licenses: [DENIED]
+exceptions:
+  require_owner: true
+  require_reason: true
+  require_expiry: true
+
